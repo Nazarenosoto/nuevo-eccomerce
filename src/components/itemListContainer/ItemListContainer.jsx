@@ -1,31 +1,37 @@
-import { useEffect, useState } from "react";
-import { products} from "../../productsMock";
-import ItemList from "../itemList/ItemList";
-import ItemCount from "../itemCount/ItemCount";
+import "./Style.css";
+import products from "../../products";
+import React, {useEffect, useState} from 'react';
+import {useParams} from 'react-router-dom';
 
-const ItemListContainer = () => {
-    const [items, setItems] = useState([])
 
-    useEffect(()=>{
-        const task = new Promise((resolve, reject)=>{
-            setTimeout(() =>{
-                resolve(products)
-            },1000)
-        })
-        task
-            .then((res) => {
-                console.log("No funciona")
-            })
-            .catch((err) =>{
-                console.log("Se cumplió la promesa")
-            })
-        console.log("Se hizo la peticion")
-    }, [])
+const ItemListContainer = ({ presentation }) => {
+  const [Item, setData] =useState ([]);
 
-    return(
-        <div>
-            <ItemCount />
-            <ItemList items={items} />
-        </div>
-    )
-}
+
+const {categoryId} = useParams();
+
+useEffect(() => {
+  const getData = new Promise (resolve =>{
+    setTimeout(() =>{
+      resolve(Item);
+    },3000)
+  });
+  if (categoryId){
+    getData.then(res => setData(res.filter(Item => categoryId === categoryId)))
+  }else {
+    getData.then(res => setData(res));
+  }
+  
+
+},[Item])
+
+return(
+  <Item Item={Item} />
+)
+
+
+};
+
+export default ItemListContainer;
+
+

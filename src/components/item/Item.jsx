@@ -1,15 +1,23 @@
-import "./Item.css"
+import ItemCount from "../ItemCount/ItemCount";
+import "./Style.css";
 
-const Item = ({element}) => {
-
-    return(
-        <div>
-            <h3>{element.name}</h3>
-            <img src={element.img} alt="" />
-            <h4>${element.price}</h4>
-            <h4>Ver detalles</h4>
-        </div>
-    )
+function Item(prop) {
+  return (
+    <div className="ContenedorCard">
+    <div className="card">
+      <div className="card-img">
+        <img src={prop.img} alt={prop.title} />
+      </div>
+    <div className="card-detail">
+        <h3>{prop.title}</h3>
+        <span>{prop.description}</span>
+        <p>U$D {prop.price}</p>
+        <span>{prop.category}</span>
+      </div>
+      <ItemCount />
+    </div>
+    </div>
+  );
 }
 
-export default Item
+export default Item;

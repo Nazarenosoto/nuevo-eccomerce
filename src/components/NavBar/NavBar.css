@@ -1,0 +1,77 @@
+ul{
+    border: 2px solid black;
+    display: flex;
+    list-style-type: none;
+    margin-left: 250px;
+    overflow: hidden;
+    border-radius: 8px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+}
+
+li {
+    float: left;
+}
+
+li a{
+    display: block;
+    position: relative;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+li a::after{
+    content: '';
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 4px;
+    bottom: 0;
+    left: 0;
+    background-color: rgba(255, 159, 49, 0.952);
+    transform-origin: bottom right;
+    transition:  transform 0.6s ease-in-out;
+}
+
+li a:hover::after{
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+li a:hover{
+    text-decoration: none;
+    transition: all 0.5s;
+    color: rgb(255, 187, 61);
+}
+
+.logo {
+    margin-left: 40px;
+    align-items: center;
+    width: 100px;
+}
+
+.violet {
+    color: violet;
+}
+
+.white {
+    color: rgb(255, 255, 255);
+}
+
+button {
+    border-radius: 8px;
+    margin: 0px;
+    padding: 0px;
+    text-decoration: none;
+}
+
+.carritoImg{
+    width: 35px;
+}
+
+.navbar{
+    width: 100%;
+    background-color: rgb(241, 240, 240);
+}
