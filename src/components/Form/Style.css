@@ -103,8 +103,9 @@ button {
 /* form */
 
 form {
+  border: 2px solid black;
   background: var(--color-darkblue-alpha);
-  padding: 2.5rem 0.625rem;
+  padding: 2.5rem 0.6rem;
   border-radius: 0.25rem;
 }
 

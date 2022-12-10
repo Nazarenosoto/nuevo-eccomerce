@@ -16,11 +16,11 @@ const ItemCount = () => {
   return (
     <div className="counter">
       <button key={count} onClick={decrease}>
-         -
+          -
       </button>
       <span>{count}</span>
       <button key={count >= 1} onClick={increase}>
-         +
+          +
       </button>
       <div>
         <button>

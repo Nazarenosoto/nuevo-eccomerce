@@ -1,22 +1,20 @@
-import Item from "../Item/Item"
+import Item from "../item/Item"
 import { Link } from "react-router-dom";
 
-
-const ItemList = ({ octoCat }) =>  {
+    const ItemList = ({ lista }) =>  {
   return (
     <div>
-    {octoCat.map((product)=> (
+    {lista.map((product)=> (
         <Link id={product.id}
-              to={'/Home/' + product.id}>
+              to={'/classic/' + product.id}>
 
         
       <Item className="itemlist"
             id={product.id}
             title={product.title}
             price={product.price}
-            image={product.img}
-            category={product.category} 
-            description={product.description} /> 
+            pictureUrl={product.pictureUrl}
+            category={product.category} /> 
       </Link>
     ))
     }
@@ -24,5 +22,6 @@ const ItemList = ({ octoCat }) =>  {
   );
 }
 
-export default ItemList
+export default ItemList;
+
 

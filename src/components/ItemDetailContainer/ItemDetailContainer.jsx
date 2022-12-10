@@ -1,31 +1,25 @@
-import {useParams} from 'react-router-dom';
-
-
+import products from "../products";
 import { useEffect, useState } from "react";
-import ItemList from "../../ItemList/ItemList";
-
-
+import ItemList from "../itemList/itemList";
 
 const ItemListContainer = ({ presentation }) => {
-  const [Item, setProductList] = useState([]);
-  const {detailId} = useParams();
+  const [productList, setProductList] = useState([]);
 
   useEffect(() => {
     getProducts.then((response) => {
       setProductList(response);
     });
-  }, [detailId]);
+  }, []);
 
   const getProducts = new Promise((resolve, reject) => {
     setTimeout(() => {
-      resolve(Item);
-    }, 3000);
+      resolve(products);
+    }, 1000);
   });
 
-  getProducts.then(res => setProducts(res.find(Item => datailId === parseInt(detalleId))));
   return (
     <>
-      <ItemList lista={ItemList} />{" "}
+      <ItemList lista={productList} />{" "}
     </>
   );
 };

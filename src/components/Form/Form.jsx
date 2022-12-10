@@ -5,7 +5,7 @@ function Formulario() {
     <div>
       <br />
       <h1 id="title">Contactanos</h1>
-      <p id="description">Gracias por su interes</p>
+      <p id="description">Thank you for taking the time! 😄 </p>
       <form id="survey-form">
         <label id="name-label">
           Nombre
@@ -25,8 +25,8 @@ function Formulario() {
           <input
             id="number"
             type="number"
-            min={10}
-            max={99}
+            min={15}
+            max={90}
             className="form-control"
             placeholder="Edad"
             required
@@ -34,21 +34,7 @@ function Formulario() {
         </label>
         <br />
         <br />
-        <label>
-          Nos recomendarias?
-          <br />
-          <input type="radio" name="indoor-outdoor" defaultValue="Definitely" />
-          Definitivamente
-        </label>
-        <br />
-        <input type="radio" name="indoor-outdoor" defaultValue="Maybe" />
-        Quizas
-        <br />
-        <input type="radio" name="indoor-outdoor" defaultValue="Not sure" />
-        No estoy segurx
-        <br />
-        <br />
-        <label>Sugerencias?</label>
+        <label>where we can improve?</label>
         <br />
         <textarea
           id="comments"

@@ -5,7 +5,7 @@ const products = [
             img: "/imgs/shopping.jpg",
             price: 3500,
             description: "lorem ipsum dolor sit ",
-            category: "Category Cian"
+            category: "Aesthetic"
         },
         {
             id: 2,
@@ -13,7 +13,7 @@ const products = [
             img: "/imgs/shopping2.jpg",
             price: 3400,
             description: "lorem ipsum dolor sit ",
-            category: "Category Black"
+            category: "Classic"
         },
         {
             id: 3,
@@ -21,7 +21,7 @@ const products = [
             img: "/imgs/shopping3.jpg",
             price: 3500,
             description: "lorem ipsum dolor sit ",
-            category: "Category Black"
+            category: "Basic"
         },
         {
             id: 4,
@@ -29,7 +29,7 @@ const products = [
             imgu: "/imgs/shopping4.jpg",
             price: 3400,
             description: "lorem ipsum dolor sit ",
-            category: "Category White"
+            category: "Aesthetic"
         }
 ]
 export default products;
