@@ -1,41 +1,42 @@
-import mock from "../mocks";
-import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
-import ItemList from "../itemList/ItemList";
 import "./Style.css";
+import mock from "../mocks";
+import ItemList from "../ItemList/ItemList";
+import { useEffect, useState } from "react";
+import { useParams } from "react-router-dom"
 
-const ItemListContainer = ({ greeting }) => {
-  const [products, setProducts] = useState([]);
-  const { categoryId } = useParams();
+const ItemListContainer = () => {
+  const { categoryId } = useParams()
+
+  const [items, setItems] = useState([])
 
   useEffect(() => {
-    function getProducts() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(mock);
-        }, 2000);
-      });
-    }
+    const productosFiltered = mock.filter(
+      (productos) => productos.category === categoryId
+    )
 
-    getProducts(categoryId) //
-      .then((products) => {
-        if (categoryId) {
-          setProducts(
-            products.filter((product) => product.category === categoryId)
-          );
-        } else {
-          setProducts(products);
-        }
-      });
-  }, [categoryId]);
+    const getProducts = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        resolve(categoryId ? productosFiltered : mock)
+      }, 500)
+    })
+
+    getProducts
+      .then((res) => {
+        setItems(res)
+      })
+      .catch((err) => {
+        console.log("se rechazo")
+      })
+
+  }, [categoryId])
 
   return (
-    <div>
-      <h1>{greeting}</h1>
-      <ItemList products={products} />
+    <div className="light">
+      <ItemList items={items} />
     </div>
-  );
-};
+  )
+}
+
 
 export default ItemListContainer;
 

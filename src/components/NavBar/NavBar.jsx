@@ -18,13 +18,13 @@ function NavBar() {
         <Link to='/'>Home </Link>
         </li>
         <li className="nav-item">
-        <Link to='/category/classic'>Classic</Link> 
+        <Link to='/category/Classic'>Classic</Link> 
         </li>
         <li className="nav-item">
-        <Link to='/category/basic'>Basic</Link>  
+        <Link to='/category/Basic'>Basic</Link>  
         </li>
         <li className="nav-item">
-        <Link to='/category/aesthetic'>Aesthetic</Link>  
+        <Link to='/category/Aesthetic'>Aesthetic</Link>  
         </li>
         <li className="nav-item">
         <Link to='/Contactanos'>Contact us</Link>  

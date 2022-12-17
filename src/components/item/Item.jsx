@@ -1,24 +1,28 @@
+import "./Style.css"
 import { Link } from "react-router-dom";
-import "./Style.css";
 
-function Item({ title, price, img, id }){
-
-    return(
-      <>
-      <div className="contenedor-imagen">
-        <div className="imagen">
-          <img src={img} />
-        </div>  
-      </div>
-      <p>{title}</p>
+const Item = ({ element }) => {
+  return (
+    <div className="cardPadre">
+      <img src={element.img}/>
       <div>
-        <strong>${price}</strong>
+        <h3>{element.name}</h3>
+        <h5 variant="body1" color="text.secondary" align="center">
+          {element.description}
+        </h5>
+        <h2 variant="body1" color="secondary" align="center">
+          ${element.price}
+        </h2>
       </div>
-      <button as={Link} to={`/detail/${id}`}>Ver mas</button>
-      </>
-    )
-
-};
-
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Link to={`/itemDetail/${element.id}`} style={{textDecoration: "none"}}>
+          <button>
+            Ver detalle
+          </button>
+        </Link>
+      </div>
+    </div>
+  )
+}
 
 export default Item;

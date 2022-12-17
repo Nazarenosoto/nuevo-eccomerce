@@ -1,16 +1,15 @@
-import Item from "../item/Item"
+import Item from "../Item/Item";
+import React from "react";
 
-  function ItemList ({products}){
-    <>
-    <div>
-      {products.map((product) => {
-        <div key={product.id}>
-          <Item {...product} />
-        </div>
+const ItemList = ({ items }) => {
+  return (
+    <div className="container-cards">
+      {items.map((element) => {
+        return <Item key={element.id} element={element} />
       })}
     </div>
-    </>
-  }
+  )
+}
 
 export default ItemList;
 
