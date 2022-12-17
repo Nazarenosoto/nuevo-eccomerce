@@ -7,15 +7,15 @@ const Item = ({ element }) => {
       <img src={element.img}/>
       <div>
         <h3>{element.name}</h3>
-        <h5 variant="body1" color="text.secondary" align="center">
+        <h5>
           {element.description}
         </h5>
-        <h2 variant="body1" color="secondary" align="center">
+        <h2>
           ${element.price}
         </h2>
       </div>
-      <div style={{ display: "flex", justifyContent: "center" }}>
-        <Link to={`/itemDetail/${element.id}`} style={{textDecoration: "none"}}>
+      <div>
+        <Link to={`/itemDetail/${element.id}`}>
           <button>
             Ver detalle
           </button>
