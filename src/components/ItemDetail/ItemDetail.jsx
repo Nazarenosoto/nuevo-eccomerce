@@ -12,14 +12,14 @@ function ItemDetail({ id, title, stock, price, img, description }) {
           <img src={img} alt={title} />
         </div>
         <div>
-          <h4 className="fs-4">
+          <h4>
             {title}
           </h4>
-          <h5 className="fs-5" style={{ color: "#212529" }}>
+          <h5>
             ${price} - {stock} unidades disponibles
           </h5>
-            <p style={{ color: "#51585e" }}>{description}</p>
-          <div className="d-flex justify-content-center mt-4">
+            <p>{description}</p>
+          <div>
             <ItemCount
               initial={0}
               stock={stock}

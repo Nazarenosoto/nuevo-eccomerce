@@ -7,7 +7,7 @@ function Item({ title, price, img, id }){
       <>
       <div className="contenedor-imagen">
         <div className="imagen">
-          <img src={img} alt="" />
+          <img src={img} />
         </div>  
       </div>
       <p>{title}</p>

@@ -1,9 +1,9 @@
 import Item from "../item/Item"
 
-  function ItemList ({ products }){
+  function ItemList ({products}){
     <>
     <div>
-      {products.map((product) =>{
+      {products.map((product) => {
         <div key={product.id}>
           <Item {...product} />
         </div>
