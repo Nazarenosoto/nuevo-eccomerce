@@ -1,4 +1,4 @@
-const products = [
+const mock = [
         {
             id: 1,
             title: "Remera Gorf",
@@ -32,4 +32,4 @@ const products = [
             category: "Aesthetic"
         }
 ]
-export default products;
+export default mock;

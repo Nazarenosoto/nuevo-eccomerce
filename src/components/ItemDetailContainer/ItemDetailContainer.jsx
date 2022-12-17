@@ -1,27 +1,33 @@
-import products from "../products";
+import mock from "../mocks";
+import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
-import ItemList from "../itemList/itemList";
+import ItemDetail from "../ItemDetail/ItemDetail";
 
-const ItemListContainer = ({ presentation }) => {
-  const [productList, setProductList] = useState([]);
+const ItemDetailContainer = () => {
+  const [product, setProduct] = useState();
+  const { id } = useParams();
 
   useEffect(() => {
-    getProducts.then((response) => {
-      setProductList(response);
-    });
-  }, []);
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 1000);
-  });
+    function getProducts() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(mock);
+        }, 2000);
+      });
+    }
+
+    getProducts(id)
+      .then((product) => {
+        setProduct(product.find((x) => x.id === id));
+      });
+  }, [id]);
 
   return (
-    <>
-      <ItemList lista={productList} />{" "}
-    </>
+    <div>
+      <ItemDetail {...product} />
+    </div>
   );
 };
 
-export default ItemListContainer;
+export default ItemDetailContainer;

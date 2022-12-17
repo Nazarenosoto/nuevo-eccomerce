@@ -7,23 +7,33 @@ import { CartWidget } from "./Components/CartWidget/CartWidget";
 import Formulario from "./Components/Form/Form";
 import Err404 from "./Components/Err404/Err404";
 import Home from "./Components/Home/Home";
+import CartContextProvider from "./context/CartContext";
 
 function App() {
   return (
     <>
       <BrowserRouter>
+      <CartContextProvider>
+
         <NavBar />
         <Routes>
+
           <Route path='/home' element={<Home/>}/>
-          <Route path='/classic/:categoryId' element={<ItemListContainer presentation="Classic Category" />}/>
-          <Route path='/basic/:categoryId' element={<ItemListContainer presentation="Basic Category" />}/>
-          <Route path='/aesthetic/:categoryId' element={<ItemListContainer presentation="Aesthetic Category" />}/>
+
+          <Route path='/category/:categoryId' element={<ItemListContainer />}/>
+          
           <Route path='/CartWidget' element={<CartWidget />}/>
-          <Route path='/Detail/:detalleId' element={<ItemDetailContainer/> }/>
+          
+          <Route path='/detail/:id' element={<ItemDetailContainer/> }/>
+          
           <Route path='/Contactanos' element={<Formulario/>}/>
+          
           <Route path="*" element={<Err404 />} />
+          
           <Route path="Ns" element={<Err404 />} />
+        
         </Routes>
+        </CartContextProvider>
       </BrowserRouter>
     </>
   );

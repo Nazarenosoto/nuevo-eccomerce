@@ -1,36 +1,42 @@
-import products from "../products";
+import mock from "../mocks";
 import { useEffect, useState } from "react";
-import ItemList from "../itemList/ItemList";
 import { useParams } from "react-router-dom";
+import ItemList from "../itemList/ItemList";
 import "./Style.css";
 
-
-const ItemListContainer = ({ presentation }) => {
-  const [productList, setProductList] = useState([]);
-  const { categoryName } = useParams(); 
-  console.log(categoryName);
+const ItemListContainer = ({ greeting }) => {
+  const [products, setProducts] = useState([]);
+  const { categoryId } = useParams();
 
   useEffect(() => {
-    getProducts.then((response) => {
-      setProductList(response);
-    });
-  }, []);
+    function getProducts() {
+      return new Promise((resolve) => {
+        setTimeout(() => {
+          resolve(mock);
+        }, 2000);
+      });
+    }
 
-  const getProducts = new Promise((resolve, reject) => {
-    setTimeout(() => {
-      resolve(products);
-    }, 2000);
-  });
+    getProducts(categoryId) //
+      .then((products) => {
+        if (categoryId) {
+          setProducts(
+            products.filter((product) => product.category === categoryId)
+          );
+        } else {
+          setProducts(products);
+        }
+      });
+  }, [categoryId]);
 
   return (
-    <>
-    <h1>{presentation}</h1>
-      <ItemList lista={productList} />{" "} 
-    </>
+    <div>
+      <h1>{greeting}</h1>
+      <ItemList products={products} />
+    </div>
   );
 };
 
 export default ItemListContainer;
 
-//me sale el error "ERROR in ./src/Components/ItemDetailContainer/ItemDetailContainer.jsx 7:0-44
 

@@ -1,23 +1,24 @@
-import ItemCount from "../ItemCount/ItemCount";
+import { Link } from "react-router-dom";
 import "./Style.css";
 
-function Item(props) {
-  return (
-    <div className="ContenedorCard">
-    <div className="card">
-      <div className="card-img">
-        <img src={props.img} alt={props.title} />
+function Item({ title, price, img, id }){
+
+    return(
+      <>
+      <div className="contenedor-imagen">
+        <div className="imagen">
+          <img src={img} alt="" />
+        </div>  
       </div>
-    <div className="card-detail">
-        <h3>{props.title}</h3>
-        <span>{props.description}</span>
-        <p>U$D {props.price}</p>
-        <span>{props.category}</span>
+      <p>{title}</p>
+      <div>
+        <strong>${price}</strong>
       </div>
-      <ItemCount />
-    </div>
-    </div>
-  );
-}
+      <button as={Link} to={`/detail/${id}`}>Ver mas</button>
+      </>
+    )
+
+};
+
 
 export default Item;
