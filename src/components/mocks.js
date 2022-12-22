@@ -4,7 +4,7 @@ const mock = [
             title: "Remera Gorf",
             img: "/imgs/shopping.jpg",
             price: 3500,
-            description: "lorem ipsum dolor sit ",
+            description: "Remera marca Gorf de buena calidad",
             category: "Aesthetic"
         },
         {
@@ -18,7 +18,7 @@ const mock = [
         {
             id: 3,
             title: "Remera Guret",
-            img: "/imgs/shopping3.jpg",
+            img: "/imgs/shopping 3.jpg",
             price: 3500,
             description: "lorem ipsum dolor sit ",
             category: "Basic"
@@ -26,7 +26,7 @@ const mock = [
         {
             id: 4,
             title: "Remera Jolsh",
-            imgu: "/imgs/shopping4.jpg",
+            img: "/imgs/shopping 4.jpg",
             price: 3400,
             description: "lorem ipsum dolor sit ",
             category: "Aesthetic"

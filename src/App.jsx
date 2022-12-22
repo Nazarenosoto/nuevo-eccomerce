@@ -7,6 +7,7 @@ import { CartWidget } from "./Components/CartWidget/CartWidget";
 import Formulario from "./Components/Form/Form";
 import Err404 from "./Components/Err404/Err404";
 import Home from "./Components/Home/Home";
+import Catalogo from "./Components/Catalogo/Catalogo";
 
 function App() {
   return (
@@ -20,9 +21,11 @@ function App() {
           <Route path='/category/:categoryId' element={<ItemListContainer />}/>
           
           <Route path='/CartWidget' element={<CartWidget />}/>
-          
-          <Route path='/detail/:id' element={<ItemDetailContainer/> }/>
-          
+
+          <Route path='/Catalogo' element={<Catalogo/>}></Route>
+
+          <Route path='/itemDetail/:id' element={<ItemDetailContainer/> }/>
+
           <Route path='/Contactanos' element={<Formulario/>}/>
           
           <Route path="*" element={<Home />} />

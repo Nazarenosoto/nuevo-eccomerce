@@ -1,9 +1,41 @@
-.cardPadre{
-  border: 1px solid blue;
-  width: 100%;
-  height: 10%;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+*{
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+.cardPadre{
+  width: 100%;
+  height: 10%;
+  justify-content: left;
+  align-items: center;
+  display: flex;
+  margin-top: 10px;
+}
+.cardPadre img{
+  width: 200px;
+  border-radius: 10px;
+}
+.infoProduc{
+  margin-left: 20px;
+}
+.infoProduc h5{
+  color: rgba(38, 155, 2, 0.87);
+  font-size: 20px;
+}
+.infoProduc h4{
+  font-size: 22px;
+}
+
+/*Button*/
+.buttonDeta{
+  text-decoration: none;
+  display: flex;
+  justify-content: right;
+}
+.buttonDeta button{
+  margin-left: 20px;
+  border: 1.5px solid rgb(0, 0, 0);
+}

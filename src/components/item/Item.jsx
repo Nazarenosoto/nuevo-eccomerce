@@ -5,22 +5,21 @@ const Item = ({ element }) => {
   return (
     <div className="cardPadre">
       <img src={element.img}/>
-      <div>
-        <h3>{element.name}</h3>
-        <h5>
+      <div className="infoProduc">
+        <h4>{element.title}</h4>
+        <p>
           {element.description}
-        </h5>
-        <h2>
+        </p>
+        <h5>
           ${element.price}
-        </h2>
-      </div>
-      <div>
-        <Link to={`/itemDetail/${element.id}`}>
+        </h5>
+      
+        <Link to={`/itemDetail/${element.id}`} className="buttonDeta">
           <button>
             Ver detalle
           </button>
         </Link>
-      </div>
+        </div>
     </div>
   )
 }

@@ -1,0 +1,15 @@
+
+
+.containerCatalogo{[]
+    border: 1px solid black;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.itemsCatalogo a{
+    font-size: 30px;
+    text-decoration: none;
+    color: black
+}
