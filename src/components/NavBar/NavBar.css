@@ -52,19 +52,12 @@ li a:hover{
     width: 100px;
 }
 
-.violet {
-    color: violet;
-}
-
-.white {
-    color: rgb(255, 255, 255);
-}
-
 button {
     border-radius: 8px;
     margin: 0px;
     padding: 0px;
     text-decoration: none;
+    border: 0px solid transparent;
 }
 
 .carritoImg{

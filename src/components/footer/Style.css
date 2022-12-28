@@ -1,0 +1,20 @@
+.footer__container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-top: 20px;
+    height: 120px;
+    width: 100%;
+}
+
+.author{
+    font-size: 16px;
+    color: rgb(0, 80, 253);
+}
+.copyright{
+    margin-top: 1px;
+    margin-left: 4px;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}

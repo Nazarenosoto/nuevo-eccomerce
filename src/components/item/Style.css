@@ -4,17 +4,22 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
 }
 
 .cardPadre{
-  width: 100%;
+  width: 700px;
   height: 10%;
   justify-content: left;
   align-items: center;
   display: flex;
   margin-top: 10px;
+  margin-left: 10px;
 }
-.cardPadre img{
+
+
+img{
   width: 200px;
   border-radius: 10px;
 }
@@ -31,11 +36,88 @@
 
 /*Button*/
 .buttonDeta{
+  background-color: transparent;
   text-decoration: none;
   display: flex;
   justify-content: right;
+  
 }
+.buttonDeta a{
+  text-decoration: none;
+  color: rgb(1, 1, 14);
+  font-size: 18px;
+}
+.buttonDeta a:hover{
+  color: rgb(185, 132, 40);
+  transition: all 0.3s;
+}
+
 .buttonDeta button{
   margin-left: 20px;
-  border: 1.5px solid rgb(0, 0, 0);
 }
+.buttonDeta:hover{
+  transform: scale(1.1);
+}
+
+/*media*/
+@media (max-width: 400px) {
+  body{
+    width: 400px;
+  }
+  .cardPadre{
+    width: 92%;
+    height: 100%;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    margin-top: 10px;
+    margin-left: 2px;
+  }
+
+  img{
+    width: 10px;
+    border-radius: 10px;
+  }
+  .infoProduc{
+    margin-left: 2px;
+  }
+  .infoProduc h5{
+    color: rgba(38, 155, 2, 0.87);
+    font-size: 5px;
+  }
+  .infoProduc h4{
+    font-size: 5px;
+  }
+}
+
+@media (max-width: 600px){
+  body{
+    width: 100%;
+  }
+  .cardPadre{
+    width: 92%;
+    height: 100%;
+    justify-content: left;
+    align-items: center;
+    display: flex;
+    margin-top: none;
+    margin-left: 2px;
+  }
+
+  img{
+    width: 120px;
+    border-radius: 10px;
+  }
+  .infoProduc{
+    margin-left: 15px;
+  }
+  .infoProduc h5{
+    color: rgba(38, 155, 2, 0.87);
+    font-size: 15px;
+  }
+  .infoProduc h4{
+    margin-top: 20px;
+    font-size: 20px;
+  }
+}
+

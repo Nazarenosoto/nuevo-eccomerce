@@ -2,26 +2,19 @@ import "./Style.css";
 
 function Formulario() {
   return (
-    <div>
-      <br />
-      <h1 id="title">Contactanos</h1>
+    <div className="cajaForm">
       <p id="description">Thank you for taking the time! 😄 </p>
-      <form id="survey-form">
-        <label id="name-label">
-          Nombre
-          <br />
-          <input id="name" type="text" placeholder="Su nombre" required />
+      <form id="survey-form" className="containerForm">
+        <label id="name-label" className="name_label" >
+          <p className="pp">Your Name</p>
+          <input id="name" type="text" required />
         </label>
-        <br />
-        <label id="email-label">
-          Email
-          <br />
-          <input id="email" type="email" placeholder="Su mail" required />
+        <label id="email-label" className="email_label">
+          <p className="pp">Your Email </p>
+          <input id="email" type="email" required />
         </label>
-        <br />
-        <label id="number-label">
-          Edad
-          <br />
+        <label id="number-label" className="your_age">
+          <p className="pp">Your Age</p>
           <input
             id="number"
             type="number"
@@ -32,10 +25,7 @@ function Formulario() {
             required
           />
         </label>
-        <br />
-        <br />
         <label>where we can improve?</label>
-        <br />
         <textarea
           id="comments"
           className="input-textarea"
@@ -44,7 +34,7 @@ function Formulario() {
           spellCheck="false"
           defaultValue={""}
         />
-        <button id="submit">Enviar</button>
+        <button id="submit" className="submitbtn">Enviar</button>
       </form>
     </div>
   );

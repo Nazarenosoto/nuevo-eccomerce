@@ -8,14 +8,14 @@ const Catalogo = () => {
         <>
         <div className="containerCatalogo">
             <div>
-                <div>
-                    <a><Link to={'/category/Classic'}>Classic</Link></a>
+                <div className="containerCate basic">
+                    <a><Link to={'/category/Basic'}>BASIC</Link></a>
                 </div>
-                <div>
-                    <a><Link to={'/category/Basic'}>Basic</Link></a>
+                <div className="containerCate classic">
+                    <a><Link to={'/category/Classic'}>CLASSIC</Link></a>
                 </div>
-                <div>
-                    <a><Link to={'/category/Aesthetic'}>Aesthetic</Link></a>
+                <div className="containerCate aesthetic">
+                    <a><Link to={'/category/Aesthetic'}>AESTHETIC</Link></a>
                 </div>
             </div>
         </div>

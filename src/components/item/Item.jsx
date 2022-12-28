@@ -14,11 +14,11 @@ const Item = ({ element }) => {
           ${element.price}
         </h5>
       
-        <Link to={`/itemDetail/${element.id}`} className="buttonDeta">
-          <button>
-            Ver detalle
+        
+          <button className="buttonDeta">
+            <Link to={`/itemDetail/${element.id}`}>Ver detalles</Link>
           </button>
-        </Link>
+        
         </div>
     </div>
   )

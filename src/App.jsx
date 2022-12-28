@@ -8,6 +8,7 @@ import Formulario from "./Components/Form/Form";
 import Err404 from "./Components/Err404/Err404";
 import Home from "./Components/Home/Home";
 import Catalogo from "./Components/Catalogo/Catalogo";
+import Footer from "./Components/footer/Footer";
 
 function App() {
   return (
@@ -33,6 +34,7 @@ function App() {
           <Route path="Ns" element={<Err404 />} />
         
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );

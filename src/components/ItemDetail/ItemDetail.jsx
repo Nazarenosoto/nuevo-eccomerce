@@ -1,29 +1,23 @@
 import ItemCount from "../ItemCount/ItemCount";
 
-function ItemDetail({ id, title, stock, price, img, description }) {
-  function handleOnAdd(quantity) {
-    alert(`Agregaste ${quantity} de ${title}`);
-  }
-
+const ItemDetail = ({ element }) => {
   return (
     <>
     <div>
         <div>
-          <img src={img} alt={title} />
+          <img src={element.img} alt={element.title} />
         </div>
         <div>
           <h4>
-            {title}
+            {element.title}
           </h4>
           <h5>
-            ${price} - {stock} unidades disponibles
+            ${element.price} - {element.stock} unidades disponibles
           </h5>
-            <p>{description}</p>
+            <p>{element.description}</p>
           <div>
             <ItemCount
               initial={0}
-              stock={stock}
-              onAdd={handleOnAdd}
             />
           </div>
         </div>
