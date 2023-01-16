@@ -1,33 +1,31 @@
-import mock from "../mocks";
-import { useParams } from "react-router-dom";
-import { useEffect, useState } from "react";
-import ItemDetail from "../ItemDetail/ItemDetail";
+import React, { useEffect, useState } from "react"
+import { useParams } from "react-router-dom"
+import ItemDetail from "../ItemDetail/ItemDetail"
+import { getDoc, doc, collection } from "firebase/firestore"
+import { db } from "../../firebaseConfig"
 
 const ItemDetailContainer = () => {
-  const [product, setProduct] = useState();
-  const { id } = useParams();
+  const [product, setProduct] = useState({})
+
+  const { id } = useParams()
 
   useEffect(() => {
+    const itemCollection = collection(db, "products")
+    const ref = doc(itemCollection, id)
 
-    function getProducts() {
-      return new Promise((resolve) => {
-        setTimeout(() => {
-          resolve(mock);
-        }, 2000);
-      });
-    }
-
-    getProducts(id)
-      .then((product) => {
-        setProduct(product.find((x) => x.id === id));
-      });
-  }, [id]);
+    getDoc(ref).then((res) => {
+      setProduct({
+        id: res.id,
+        ...res.data(),
+      })
+    })
+  }, [id])
 
   return (
-    <div>
-      <ItemDetail {...product} />
+    <div className="container-detail">
+      <ItemDetail product={product} />
     </div>
-  );
-};
+  )
+}
 
-export default ItemDetailContainer;
+export default ItemDetailContainer

@@ -19,8 +19,9 @@
 }
 
 
-img{
-  width: 200px;
+.cardPadre img{
+  width: 180px;
+  height: 200px;
   border-radius: 10px;
 }
 .infoProduc{

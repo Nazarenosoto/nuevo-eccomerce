@@ -6,7 +6,7 @@ import './home.css';
 function Home() {
   return (
     <div className="catalogoHome">
-      <Link to="/Catalogo" element={<Catalogo />}>Ver catalogo</Link>
+      <Link to="/Catalogo" element={<Catalogo />}>See catalog</Link>
     </div>
   );
 }

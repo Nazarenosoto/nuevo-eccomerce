@@ -1,29 +1,42 @@
-import ItemCount from "../ItemCount/ItemCount";
+import React, { useContext } from "react"
+import { CartContext } from "../../context/CartContext"
+import ItemCount from "../ItemCount/ItemCount"
 
-const ItemDetail = ({ element }) => {
+const ItemDetail = ({ product }) => {
+  const { addToCart, getQuantityBiId } = useContext(CartContext)
+
+  const onAdd = (quantity) => {
+    addToCart({
+      ...product,
+      quantity: quantity,
+    })
+
+  }
+
+  const quantity = getQuantityBiId(product.id)
+
   return (
-    <>
     <div>
-        <div>
-          <img src={element.img} alt={element.title} />
-        </div>
-        <div>
-          <h4>
-            {element.title}
-          </h4>
-          <h5>
-            ${element.price} - {element.stock} unidades disponibles
-          </h5>
-            <p>{element.description}</p>
-          <div>
-            <ItemCount
-              initial={0}
-            />
-          </div>
-        </div>
+      <div>
+        <img src={product.img} alt="" />
+      </div>
+
+      <div>
+        <h2>
+          <span>Nombre:</span> {product.name}
+        </h2>
+        <h2>
+          <span>Descripcion:</span>{" "}
+          {product.description}
+        </h2>
+        <h2>
+          <span>Precio:</span> ${product.price}.-
+        </h2>
+
+        <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity} />
+      </div>
     </div>
-    </>
-  );
+  )
 }
 
-export default ItemDetail;
+export default ItemDetail

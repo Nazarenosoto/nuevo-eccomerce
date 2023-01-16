@@ -1,8 +1,9 @@
 import "./Style.css";
-import mock from "../mocks";
 import ItemList from "../ItemList/ItemList";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom"
+import { useParams } from "react-router-dom";
+import { getDocs, collection, query, where } from "firebase/firestore"
+import { db } from "../../firebaseConfig"
 
 const ItemListContainer = () => {
   const { categoryId } = useParams()
@@ -10,34 +11,47 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([])
 
   useEffect(() => {
-    const productosFiltered = mock.filter(
-      (productos) => productos.category === categoryId
-    )
 
-    const getProducts = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(categoryId ? productosFiltered : mock)
-      }, 500)
-    })
+    const itemCollection = collection(db, "products")
 
-    getProducts
-      .then((res) => {
-        setItems(res)
-      })
-      .catch((err) => {
-        console.log("se rechazo")
-      })
+    if (categoryId) {
+      const q = query(itemCollection, where("category", "==", categoryId))
+      getDocs(q)
+        .then((res) => {
+          const products = res.docs.map((product) => {
+            return {
+              ...product.data(),
+              id: product.id,
+            }
+          })
+
+          setItems(products)
+        })
+        .catch((err) => console.log(err))
+    } else {
+      getDocs(itemCollection)
+        .then((res) => {
+          const products = res.docs.map((product) => {
+            return {
+              ...product.data(),
+              id: product.id,
+            }
+          })
+
+          setItems(products)
+        })
+        .catch((err) => console.log(err))
+    }
 
   }, [categoryId])
 
   return (
-    <div className="light">
-      <ItemList items={items} />
+    <div className="cardPadre">
+        <ItemList items={items} />
     </div>
   )
 }
 
-
-export default ItemListContainer;
+export default ItemListContainer
 
 
