@@ -1,0 +1,25 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.Container-detail{
+    margin-top: 20px;
+    width: 100%;
+    display: grid;
+    place-items: center;
+}
+
+span{
+    font-size: 30px;
+    color: rgb(73, 35, 7);
+    font-family: 'Courier New', Courier, monospace;
+}
+h2{
+    font-size: 23px;
+    color: rgb(58, 57, 57);
+}
+
+img{
+    border-radius: 20px;
+}

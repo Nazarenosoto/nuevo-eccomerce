@@ -14,9 +14,8 @@ import Cart from "./Components/Cart/cart";
 function App() {
   return (
     <>
-      <BrowserRouter>
-
-      <CartContextProvider/>
+    <CartContextProvider>
+      <BrowserRouter>  
 
         <NavBar />
 
@@ -43,6 +42,8 @@ function App() {
         
         <Footer />
       </BrowserRouter>
+      </CartContextProvider>
+
     </>
   );
 }

@@ -5,7 +5,9 @@ import { useState } from "react"
 import { Link } from "react-router-dom"
 import { collection, doc, getDoc } from "firebase/firestore"
 import { db } from "../../firebaseConfig"
+import  CartItem  from "../cardItem/CartItem"
 import Orders from "../orders/Orders"
+import './cart.css'
 
 
 const Cart = () => {
@@ -38,6 +40,10 @@ const Cart = () => {
     }
   }, [orderId])
 
+  const limpiar = () => {
+    alert("Has quitado los producto;(")
+    clearCart()
+  }
 
   if (orderId) {
     return (
@@ -52,15 +58,19 @@ const Cart = () => {
 
   return (
     <div className="cart-container">
-      <div className="cart-info">
-        <h2>Descripcion del carrito:</h2>
-        <h3>Cantidad de productos: </h3>
-        <h3>
-          Precio total: {getTotalPrice() > 0 ? getTotalPrice() : "No hay items"}
-        </h3>
-        <h3>Descuento: </h3>
-        <h3>Precio final: </h3>
+      <div className="container-items">
+        {cart.map((item) => (
+          <CartItem key={item.id} item={item} />
+        ))}
 
+        {cart.length < 1 && <noInfo />}
+      </div>
+
+      <div className="cart-info">
+
+        <h3>
+          Precio total: {getTotalPrice() > 0 ? getTotalPrice() : "No hay productos"}
+        </h3>
         {buy ? (
           <Form
             cart={cart}
@@ -71,16 +81,16 @@ const Cart = () => {
         ) : (
           cart.length > 0 && (
             <div className="btn-cart">
-              <button onClick={openForm}>
+              <button variant="contained" onClick={openForm}>
                 Comprar
               </button>
-              <button>
+              <button onClick={() => limpiar()} variant="contained">
                 Vaciar carrito
               </button>
             </div>
           )
         )}
-    </div>
+      </div>
     </div>
   )
 }

@@ -1,16 +1,25 @@
-.counter{
-    width: 110%;
+.btns{
+    display: flex;
     align-items: center;
-    text-align: center;
-    padding: 0px 30px 0px 10px;
-    border-radius: 10px;
-    margin: 10px 0px 10px 0px;
-
-
+    justify-content: center;
+    font-size: 33px;
+    border-radius: 15px;
+    box-shadow: 0 8px 5px 5px rgba(0, 0, 0, 0.2);
+}
+.btns button{
+    margin-left: 5px;
+    background: transparent;
+    border-radius: 20px;
 }
 
-.btn__cart{
-    display: flex;
-    justify-content:flex-end;
+.container-btn{
+    display: grid;
+    place-items: center;
+}
 
+.agcar{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    text-align: center;
+    font-size: 25px;
+    color: rgb(0, 63, 5);
 }

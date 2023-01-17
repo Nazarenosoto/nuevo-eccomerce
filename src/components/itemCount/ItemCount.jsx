@@ -1,34 +1,41 @@
-import { useState } from "react";
-import { CartWidget } from "../CartWidget/CartWidget";
+import { useState, useEffect } from "react";
 import "./Style.css";
 
-const ItemCount = () => {
-  const [count, setCount] = useState(0);
+const ItemCount = ({ stock, initial = 0, onAdd }) => {
+  const [counter, setCounter] = useState(initial)
 
-  const decrease = () => {
-    setCount((count) => Math.max(count - 1, 0));
-  };
+  useEffect(() => {
+    setCounter(initial)
+  }, [initial])
 
-  const increase = () => {
-    setCount(count + 1);
-  };
+  const increment = () => {
+    if (counter < stock) {
+      setCounter(counter + 1)
+    }
+  }
+
+  const decrement = () => {
+    if (counter > 1) {
+      setCounter(counter - 1)
+    }
+  }
 
   return (
-    <div className="counter">
-      <button key={count} onClick={decrease}>
-          -
-      </button>
-      <span>{count}</span>
-      <button key={count >= 1} onClick={increase}>
+    <div className="container-btn">
+      <h2>Cantidad: {counter}</h2>
+      <div className="btns">
+        <button variant="outlined" onClick={increment}>
           +
-      </button>
-      <div>
-        <button>
-          <CartWidget />
+        </button>
+        <button variant="contained" onClick={() => onAdd(counter)} className="agcar">
+          agregar al carrito
+        </button>
+        <button variant="outlined" onClick={decrement}>
+          -
         </button>
       </div>
     </div>
-  );
-};
+  )
+}
 
 export default ItemCount;

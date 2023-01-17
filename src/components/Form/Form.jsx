@@ -1,6 +1,11 @@
 import "./Style.css";
 
 function Formulario() {
+
+  const form = () =>{
+    alert(`Le agradecemos por su confianza!`)  
+  }
+
   return (
     <div className="cajaForm">
       <p id="description">Thank you for taking the time! 😄 </p>
@@ -34,7 +39,7 @@ function Formulario() {
           spellCheck="false"
           defaultValue={""}
         />
-        <button id="submit" className="submitbtn">Enviar</button>
+        <button id="submit" className="submitbtn" onClick={() => form()}>Enviar</button>
       </form>
     </div>
   );

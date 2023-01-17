@@ -1,6 +1,7 @@
 import React, { useContext } from "react"
 import { CartContext } from "../../context/CartContext"
 import ItemCount from "../ItemCount/ItemCount"
+import './detail.css'
 
 const ItemDetail = ({ product }) => {
   const { addToCart, getQuantityBiId } = useContext(CartContext)
@@ -11,12 +12,14 @@ const ItemDetail = ({ product }) => {
       quantity: quantity,
     })
 
+    alert("Agregaste el producto al carrito! :)")
+
   }
 
   const quantity = getQuantityBiId(product.id)
 
   return (
-    <div>
+    <div className="Container-detail">
       <div>
         <img src={product.img} alt="" />
       </div>
@@ -36,6 +39,8 @@ const ItemDetail = ({ product }) => {
         <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity} />
       </div>
     </div>
+
+    
   )
 }
 
